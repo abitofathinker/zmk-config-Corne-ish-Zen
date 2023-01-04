@@ -10,10 +10,10 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define QWERTY 0
-#define NAVIGA 1
-#define NUMBER 2
-#define SUPER 3
-#define NUMPAD 4
+#define NUMPAD 1
+#define NAVIGA 2
+#define NUMBER 3
+#define SUPER 4
 #define CONFIG 5
 / {
         keymap {
@@ -28,11 +28,18 @@
                   &kp LGUI &mo NAVIGA &kp SPACE   &kp RET &mo NUMBER &kp RALT
                         >;
                 };
+                numpad_layer {
+                        label = "NUMPAD";
+                        bindings = <
+   &kp  TAB  &kp KP_EQUAL    &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_MINUS    &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
+   &kp LCTRL &kp KP_N0       &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS     &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
+   &kp LSHFT &kp KP_SLASH    &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_ASTERISK &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
+                                    &kp ENTER &mo NAVIGA &kp SPC           &kp RET   &trans    &kp RALT
                 nav_layer {
                         label = "NAVIGA";
                         bindings = <
-   &kp ESC    &kp TAB     &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0     &kp DELETE
-   &sk LCTRL  &kp N0      &kp N4       &kp N5       &kp N6       &kp MINUS      &kp LEFT &kp DOWN &kp UP &kp RIGHT &caps_word &kp INS
+   &kp ESC    &kp TAB     &kp N2       &kp N3       &kp N4       &kp COMMA         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0     &kp DELETE
+   &sk LCTRL  &kp N0      &kp N4       &kp N5       &kp N6       &kp DOT      &kp LEFT &kp DOWN &kp UP &kp RIGHT &caps_word &kp INS
    &sk LSHFT  &tog NUMPAD &kp N1       &kp N2       &kp N3       &sk LALT       &trans   &trans   &trans &trans    &trans     &sk RSHFT
                                     &kp LGUI     &trans       &kp SPACE         &kp RET  &mo SUPER   &kp RALT
                         >;
@@ -55,13 +62,7 @@
                                         &kp LGUI     &trans      &kp SPACE      &kp RET  &trans    &kp RALT
                         >;
                 };
-                numpad_layer {
-                        label = "NUMPAD";
-                        bindings = <
-   &kp  TAB  &kp KP_EQUAL    &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp KP_MINUS    &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &kp KP_N0       &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS     &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &kp KP_SLASH    &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_ASTERISK &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                                    &kp ENTER &mo NAVIGA &kp SPC           &kp RET   &trans    &kp RALT
+
                         >;
                 };
                 config_layer {
